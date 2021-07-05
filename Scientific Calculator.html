@@ -1,0 +1,45 @@
+<html>
+<head>
+<title>Square root calculator</title>
+</head>
+<body>
+<style type="text/css">
+body{
+font-family: manifest;
+user-select: none;
+}
+</style>
+<script type="text/javascript">
+function check(){
+var opr = document.getElementById("operator").value;
+var num = parseInt(document.getElementById("number").value);
+
+if(opr === "Square"){
+document.getElementById("result").innerHTML = "The square root of " + num + " is " + Math.sqrt(num);
+}
+
+if(opr === "Cube"){
+document.getElementById("result").innerHTML = "The cube root of the " + num + " is " + Math.cbrt(num);
+}
+
+if(opr === "Circumference"){
+document.getElementById("result").innerHTML = "The circumferace of a circle if its radius is " + num + " is " + Math.PI * 2 * num;
+}
+
+if(opr === "Select"){
+document.getElementById("opeartornotvalid").innerHTML = "Please select the operation!";
+}
+}
+</script>
+<input type="text" placeholder="Number" id="number"/><br><br>
+<select id="operator">
+<option value="Select">Select</option>
+<option value="Square">Sqaure Root</option>
+<option value="Cube">Cube Root</option>
+<option value="Circumference">Circumference</option>
+</select><br>
+<label id="opeartornotvalid"></label><br><br>
+<input type="button" value="Find Answer" onclick="check()"/><br><br>
+<p id="result"></p>
+</body>
+</html>
