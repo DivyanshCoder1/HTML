@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>Profit and Loss Caclulator</title>
+    </head>
+    <body>
+        Cost Price:- <input type="text" id="cp" placeholder="CP"/><br>
+        Selling Price:- <input type="text" id="sp" placeholder="SP"/><br>
+        <input type="button" value="Calculate" id="btn1" onclick="calcit();"/><br><br>
+        <label id="profitans"></label><br>
+        <label id="profitpercentans"></label>
+        <script type="text/javascript">
+            //Javascript
+            function calcit(){
+                var cpvalue = parseInt(document.getElementById("cp").value);
+                var spvalue = parseInt(document.getElementById("sp").value);
+                var profit = spvalue - cpvalue;
+                var profitpercent = profit/cpvalue * 100;
+                if(profit<0){
+                    profit = profit * -1;
+                    profitpercent = profitpercent * -1;
+                    document.getElementById("profitans").innerHTML = "Loss:- " + profit + " Rs" ;
+                    document.getElementById("profitpercentans").innerHTML = "Loss %:- " + profitpercent + " %";
+                }else{
+                    document.getElementById("profitans").innerHTML = "Profit:- " + profit + " Rs" ;
+                    document.getElementById("profitpercentans").innerHTML = "Profit %:- " + profitpercent + " %";
+                }
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Simple Intrest Calculator</title>
+    </head>
+    <body>
+        <input type="text" placeholder="Principal" id="principal"/><label id="principalwrong"></label><br>
+        <input type="text" placeholder="Rate" id="rate"/><label id="ratewrong"></label><br>
+        <input type="text" placeholder="Time" id="time"/><label id="timewrong"></label><br>
+        <input type="button" value="Calculate Intrest" onclick="calculate();"/><br>
+        <label id="result"></label>
+        <script type="text/javascript">
+        //javascript
+        function calculate(){
+            var principal = parseInt(document.getElementById("principal").value);
+            var rate = parseInt(document.getElementById("rate").value);
+            var time = parseInt(document.getElementById("time").value);
+
+            document.getElementById("result").innerHTML = (principal * rate * time) / 100;
+        }
+        </script>
+    </body>
+</html>

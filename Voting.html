@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voting checker</title>
+</head>
+<body>
+    Age:- <input type="text" id="age" placeholder="Age" maxlength="3"/>
+    <br>
+    <input type="button" value="Check" id="btn1" onclick="startit();"/><span>      </span><input type="button" id="btn2" value="Clear" onclick="cleartext();"/><br>
+    <label id="result"></label>
+    <script type="text/javascript">
+        //Javascript
+        function startit(){
+            var agenum = parseInt(document.getElementById("age").value);
+            if(agenum>18){
+                if(agenum<=100){
+                    document.getElementById("result").innerHTML = "You can vote!";
+                }else{
+                    document.getElementById("result").innerHTML = "Invalid Age!";
+                }
+
+            }
+            else if(agenum==18){
+                document.getElementById("result").innerHTML = "You can vote!";
+            }
+            else{
+                document.getElementById("result").innerHTML = "You cannot vote!";
+            }
+        }
+
+        function cleartext(){
+                var inputpanel = document.getElementById("age");
+                inputpanel.value = "";
+                document.getElementById("result").innerHTML = "";
+            }
+    </script>
+</body>
+</html>
