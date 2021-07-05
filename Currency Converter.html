@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <title>Currency Converter</title>
+    </head>
+    <body>
+        <b>From: </b><select id="curr"  onMouseover="setIt()">
+            <option value="ruppee">Ruppees</option>
+            <option value="dollar">Dollar</option>
+        </select>
+        <b>To: </b><select id="tocurr">
+            <option value="ruppee">Ruppees</option>
+            <option value="dollar">Dollar</option>
+        </select><br>
+        <input type="number" id="num" placeholder="Enter price"/><br><br>
+        <label id="result"></label>
+        <script type="text/javascript">
+        //javascript
+        function setIt(){
+            setInterval("convert();", 0);
+        }
+        function convert(){
+            var tocurr = document.getElementById("tocurr").value;
+            var curr = document.getElementById("curr").value;
+            var num = document.getElementById("num");
+            if(curr=="ruppee"){
+                if(tocurr=="dollar"){
+                    document.getElementById("result").innerHTML = num.value / 70;
+                }
+
+                if(tocurr=="ruppee"){
+                    document.getElementById("result").innerHTML = num.value;
+                }
+            }
+
+            if(curr=="dollar"){
+
+                if(tocurr=="ruppee"){
+                    document.getElementById("result").innerHTML = num.value * 70;
+                }
+
+                if(tocurr=="dollar"){
+                    document.getElementById("result").innerHTML = num.value;
+                }
+            }
+        }
+        </script>
+    </body>
+</html>
