@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Division Maker</title>
+</head>
+<body>
+    <input type="text" placeholder="Dividend" id="dividend"/><br>
+    <input type="text" placeholder="Divisor" id="divisor"/><br>
+    <input type="button" value="Divide" id="btn1" onclick="startit();"/><br>
+    <label id="label1"></label><br>
+    <label id="label2"></label><br>
+
+    <script type="text/javascript">
+        //Javascript
+        function startit(){
+            var num1 = parseInt(document.getElementById("dividend").value);
+            var num2 = parseInt(document.getElementById("divisor").value);
+            var ans1 = Math.floor(num1/num2);
+            var ans2 = num1 % num2;
+            document.getElementById("label1").innerHTML = "Quotient: " + String(ans1);
+            document.getElementById("label2").innerHTML = "Remainder: " + String(ans2);
+        }
+    </script>
+</body>
+</html>
