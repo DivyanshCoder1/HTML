@@ -19,12 +19,13 @@
             setInterval("convert();", 0);
         }
         function convert(){
+            //The time i have made this code the value of dollar 74.53 rs only.I have not added more currecies.
             var tocurr = document.getElementById("tocurr").value;
             var curr = document.getElementById("curr").value;
             var num = document.getElementById("num");
             if(curr=="ruppee"){
                 if(tocurr=="dollar"){
-                    document.getElementById("result").innerHTML = num.value / 70;
+                    document.getElementById("result").innerHTML = num.value / 74.53;
                 }
 
                 if(tocurr=="ruppee"){
@@ -35,7 +36,7 @@
             if(curr=="dollar"){
 
                 if(tocurr=="ruppee"){
-                    document.getElementById("result").innerHTML = num.value * 70;
+                    document.getElementById("result").innerHTML = num.value * 74.53;//The time i have made this code the value of dollar is this only.I have not added more currecies.
                 }
 
                 if(tocurr=="dollar"){
