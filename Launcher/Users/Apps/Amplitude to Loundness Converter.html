@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <title>Amplitude to Loudness Converter(Vice Versa)</title>
+    </head>
+    <body>
+        <style type="text/css">
+            html,body{
+                user-select: none;
+            }
+        </style>
+        From: <input type="text" id="user_input" placeholder="Unit" onMouseover="setit();"/>
+        <select id="oper">
+            <option value="L">Loudness</option>
+            <option value="A">Amplitude</option>
+        </select>
+        To: <select id="oper2">
+            <option value="A">Amplitude</option>
+            <option value="L">Loudness</option>
+        </select>
+        <br>
+        <label id="result"></label>
+        <script type="text/javascript">
+            //Javascript
+            function setit(){
+                setInterval("starter();", 0.1);
+            }
+
+            function starter(){
+                var num = parseInt(document.getElementById("user_input").value);
+                var oper2 = document.getElementById("oper2").value;
+                var oper = document.getElementById("oper").value;
+
+                if(oper=="L"){
+                    if(oper2=="A"){
+                        document.getElementById("result").innerHTML = Math.sqrt(num);
+                    }
+
+                    if(oper2=="L"){
+                        document.getElementById("result").innerHTML = num;
+                    }
+                }
+
+                if(oper=="A"){
+                    if(oper2=="L"){
+                        document.getElementById("result").innerHTML = num * num;
+                    }
+
+                    if(oper2=="A"){
+                        document.getElementById("result").innerHTML = num;
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>

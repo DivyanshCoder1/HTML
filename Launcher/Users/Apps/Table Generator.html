@@ -1,0 +1,98 @@
+<html>
+    <head>
+        <title>Table Generator</title>
+    </head>
+    <body>
+        <style type="text/css">
+        body{
+            margin: 0px;
+            padding: 0px;
+            background: linear-gradient(57deg, #00c6a7 ,#1e4d92);
+            color: white;
+            font-weight: bold;
+        }
+
+        #container{
+            background: linear-gradient(57deg, #1e4d92 ,#00c6a7);
+            color: white;
+            padding: 10px;
+            border-radius: 10px;
+            width: 20%;
+            margin-left: 550px;
+            margin-top: 150px;
+            font-weight: bold;
+        }
+
+        #num{
+            border-radius: 10px;
+            border-color: black;
+            padding: 2px;
+            font-family: manifest; 
+            font-size: 20px;
+            user-select: none;
+        }
+
+        #btn1{
+            border-radius: 10px;
+            border-color: black;
+            border-width: 2px;
+            font-weight: bold;
+            padding: 2px;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        #btn1:hover{
+            background: #00c6a7;
+            color: white;
+            user-select: none;
+        }
+        </style>
+        <div id="container">
+        <input type="text" placeholder="Number" id="num" onMouseover="document.getElementById('problem').innerHTML = 'Enter the number here';" onMouseout="document.getElementById('problem').innerHTML = ''; document.getElementById('problem').innerHTML = 'Table will appear here';"/><br><br>
+        <input type="button" value="Generate Table" onclick="generate();" id="btn1" onMouseover="document.getElementById('btn1').value = 'Click me to get table';" onMouseout="document.getElementById('btn1').value = 'Generate Table';"/><br><br><br>
+        <label id="problem"></label><br>
+        <label id="tableone"></label><br>
+        <label id="tabletwo"></label><br>
+        <label id="tablethree"></label><br>
+        <label id="tablefour"></label><br>
+        <label id="tablefive"></label><br>
+        <label id="tablesix"></label><br>
+        <label id="tableseven"></label><br>
+        <label id="tableeight"></label><br>
+        <label id="tablenine"></label><br>
+        <label id="tableten"></label><br>
+        </div>
+        <script type="text/javascript">
+        function generate(){
+            var num = document.getElementById("num").value;
+            document.getElementById("problem").innerHTML = "";
+            document.getElementById("tableone").innerHTML = num + " x 1 = " + num * 1;
+            document.getElementById("tabletwo").innerHTML = num + " x 2 = " + num * 2;
+            document.getElementById("tablethree").innerHTML = num + " x 3 = " + num * 3;
+            document.getElementById("tablefour").innerHTML = num + " x 4 = " + num * 4;
+            document.getElementById("tablefive").innerHTML = num + " x 5 = " + num * 5;
+            document.getElementById("tablesix").innerHTML = num + " x 6 = " + num * 6;
+            document.getElementById("tableseven").innerHTML = num + " x 7 = " + num * 7;
+            document.getElementById("tableeight").innerHTML = num + " x 8 = " + num * 8;
+            document.getElementById("tablenine").innerHTML = num + " x 9 = " + num * 9;
+            document.getElementById("tableten").innerHTML = num + " x 10 = " + num * 10;
+
+            if(num.length == 0){
+                document.getElementById("problem").innerHTML = "Please Enter the number here";
+                document.getElementById("tableone").innerHTML = "";
+                document.getElementById("tabletwo").innerHTML = "";
+                document.getElementById("tablethree").innerHTML = "";
+                document.getElementById("tablefour").innerHTML ="";
+                document.getElementById("tablefive").innerHTML ="";
+                document.getElementById("tablesix").innerHTML = "";
+                document.getElementById("tableseven").innerHTML = "";
+                document.getElementById("tableeight").innerHTML = "";
+                document.getElementById("tablenine").innerHTML = "";
+                document.getElementById("tableten").innerHTML = "";
+
+            }
+        }
+        </script>
+    </body>
+</html>

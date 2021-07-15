@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Timer</title>
+    </head>
+    <body>
+        <h1>Timer</h1><br>
+        <button id="btn" onclick="setit();">Start</button><br><br>
+        <label id="display"></label>
+        <script type="text/javascript">
+            //Javascript
+
+            //Variables
+            var num = 10;
+            var btn = document.getElementById("btn");
+
+            //Make it work in seconds
+            function setit(){
+                setInterval("start()", 1000);
+                start();
+            }
+            //Start timer
+            function start(){
+                num = num - 1;
+                document.getElementById("display").innerHTML = num;
+                btn.disabled = true;
+                if(num == 0){
+                    end();
+                }
+            }
+            
+            // If timer ends
+            function end(){
+                document.getElementById("display").innerHTML = "Time Up!";
+                btn.disabled = false;
+                return;
+            }
+            
+        </script>
+    </body>
+</html>

@@ -1,0 +1,180 @@
+<html>
+<head>
+<title>Calculator</title>
+</head>
+<body>
+
+    <!--CSS starts here-->
+    <style type="text/css">
+    body{
+        background: linear-gradient(57deg, #00c6a7 ,#1e4d92);
+        font-weight: bold;
+        color: white;
+    }
+
+    #calculator{
+        background: linear-gradient(57deg, #1e4d92, #00c6a7);
+        border-radius: 10px;
+        margin-left: 550px;
+        padding: 25px;
+        width: 14%;
+    }
+
+    #n1{
+        border-color: black;
+        border-radius: 10px;
+        padding: 3px;
+        margin-left: 5px;
+        user-select: none;
+    }
+
+    #n2{
+        border-color: black;
+        border-radius: 10px;
+        padding: 3px;
+        margin-left: 5px; 
+        user-select: none;
+    }
+
+    
+    #btn1{
+        border-radius: 10px;
+        border-color: black;
+        border-width: 2px;
+        font-family: manifest;
+        font-weight: bold;
+        padding: 5px;
+        font-size: 18px;
+        color: white;
+        background: #00c6a7;
+        margin-left: 35px;
+        user-select: none;
+    }
+
+    #operator{
+        border-color: black;
+        border-radius: 10px;
+        border-width: 2px;
+        font-weight: bold;
+        font-size: 18px;
+        margin-left: 53px;
+        background: #00c6a7;
+        color: white;
+        user-select: none;
+    }
+
+    #opt{
+        background: #00c6a7;
+        border-radius: 10px;
+        color: white;
+        border-color: black;
+        user-select: none;
+    }
+
+    #label1{
+        user-select: none;
+        font-size: 50px;
+        margin-left: 500px;
+    }
+
+    #opernotsele{
+        margin-left: 18px;
+        font-size: 13px;
+        color: red;
+        user-select: none;
+    }
+
+    #Selectn1{
+        color: red;
+        font-size: 13px;
+        user-select: none;
+    }
+
+    #Selectn2{
+        color: red;
+        font-size: 13px;
+        user-select: none;
+    }
+
+    #result{
+        font-size: 30px;
+    }
+    </style>
+    <br><br><br><br><br><br><br>
+    <!--CSS ends here-->
+
+<!--This is HTML Portion.HTML starts here-->
+    <label id="label1">CALCULATOR</label><br><br>
+<div id="calculator">
+    <input type="text" placeholder="Number 1" id="n1"/><br>
+    <label id="Selectn1"></label>
+    <br><input type="text" placeholder="Number 2" id="n2"/><br>
+    <label id="Selectn2"></label>
+    <br><select id="operator">
+        <option value="Select" id="opt">Select</option>
+        <option value="Add" id="opt">+</option>
+        <option value="Subtract" id="opt">-</option>
+        <option value="Multiply" id="opt">X</option>
+        <option value="Divide" id="opt">/</option>
+    </select><br>
+    <label id="opernotsele"></label>
+    <br>
+    <input type="button" value="Find Answer" onclick="find()" id="btn1" onMouseout="alert('Hey! You cannot go without finding answer');"/><br><br>
+    <label id="result"></label>
+</div>
+<!--HTML ends here-->
+
+<!--Javascript Starts-->
+<script type="text/javascript">
+//Javascript area from here to the last comment of the javascript
+function find(){
+    //Variables
+    var num1 = parseInt(document.getElementById("n1").value);
+    var num2 = parseInt(document.getElementById("n2").value);
+    var oper = document.getElementById("operator").value;
+    var size1 = parseInt(document.getElementById("n1").length);
+    var size2 = parseInt(document.getElementById("n2").length);
+    const a = 0;
+
+    //If statements
+    if(oper === "Add"){
+        document.getElementById("opernotsele").innerHTML = "";
+        document.getElementById("result").innerHTML = num1 + num2;
+        return;
+    }  
+    if(oper === "Subtract"){
+        document.getElementById("opernotsele").innerHTML = "";
+        document.getElementById("result").innerHTML = num1 - num2;
+        return;
+    }
+    if(oper === "Multiply"){
+        document.getElementById("opernotsele").innerHTML = "";
+        document.getElementById("result").innerHTML = num1 * num2;
+        return;
+    }
+    if(oper === "Divide"){
+        document.getElementById("opernotsele").innerHTML = "";
+        document.getElementById("result").innerHTML = num1 / num2;
+        return;
+    }
+    if(oper === "Select"){
+        document.getElementById("opernotsele").innerHTML = "Please select any operator";
+        document.getElementById("result").innerHTML = "";
+        return;
+    }
+    if(num1.length == 0){
+        document.getElementById("Selectn1").innerHTML = "Please enter the First Number !";
+        document.getElementById("result").innerHTML = "";
+    }
+
+    if(num2.length == 0){
+        document.getElementById("Selectn2").innerHTML = "Please enter the Second Number !";
+        document.getElementById("result").innerHTML = "";
+    }
+}
+//The javascript ends here and starts from the first comment.
+</script>
+<!--Javascript ends-->
+
+</body>
+</html>

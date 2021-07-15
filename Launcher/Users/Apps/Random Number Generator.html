@@ -1,0 +1,116 @@
+<html>
+<head>
+<title>Random Number Generator</title>
+</head>
+<body onload="alert('The number finded will be erased and the selection also!');">
+<style type="text/css">
+body{
+padding: 0px;
+margin: 0px;
+background: linear-gradient(57deg, #00c6a7, #1e4d92);
+font-weight: bold;
+font-family: manifest;
+color: white;
+}
+
+#all{
+border-radius: 10px;
+background: linear-gradient(57deg, #1e4d92, #00c6a7);
+width: 20%;
+padding: 7px;
+margin-top: 225px;
+margin-left: 550px; 
+}
+
+#btn1{
+border-radius: 10px;
+border-color: black;
+padding: 4px;
+font-weight: bold;
+font-family: manifest;
+font-size: 15px;
+margin-left: 90px;
+background: #00c6a7;
+color: white;
+user-select: none;
+}
+
+#operator{
+border-radius: 10px;
+border-color: black;
+padding: 3px;
+font-weight: bold;
+font-family: manifest;
+font-size: 15px;
+margin-left: 98px;
+border-width: 3px;
+background: #00c6a7;
+color: white;
+user-select: none;
+}
+
+#result{
+font-size: 20px
+}
+</style>
+<script type="text/javascript">
+function find(){
+//Variable
+var oper = document.getElementById("operator").value;
+var btn = document.getElementById("btn1");
+
+//If statement
+if(oper === "one"){
+document.getElementById("result").innerHTML = Math.floor(Math.random() * 10);
+}
+if(oper === "two"){
+document.getElementById("result").innerHTML = Math.floor(Math.random() * 100);
+}
+if(oper === "three"){
+document.getElementById("result").innerHTML = Math.floor(Math.random() * 1000);
+}
+if(oper === "four"){
+document.getElementById("result").innerHTML = Math.floor(Math.random() * 10000);
+}
+if(oper === "five"){
+document.getElementById("result").innerHTML = Math.floor(Math.random() * 100000);
+}
+if(oper === "six"){
+document.getElementById("result").innerHTML = Math.floor(Math.random() * 1000000);
+}
+if(oper === "seven"){
+document.getElementById("result").innerHTML = Math.floor(Math.random() * 10000000);
+}
+if(oper === "eight"){
+document.getElementById("result").innerHTML = Math.floor(Math.random() * 100000000);
+}
+if(oper === "nine"){
+document.getElementById("result").innerHTML = Math.floor(Math.random() * 1000000000);
+}
+if(oper === "ten"){
+document.getElementById("result").innerHTML = Math.floor(Math.random() * 10000000000) + "(This is the maximum value)";
+}
+if(oper === "Select"){
+document.getElementById("result").innerHTML = "Please select the number of digits";
+}
+}
+</script>
+<div id="all">
+<select id="operator">
+<option value="Select">Select</option>
+<option value="one">1 digit</option>
+<option value="two">2 digit</option>
+<option value="three">3 digit</option>
+<option value="four">4 digit</option>
+<option value="five">5 digit</option>
+<option value="six">6 digit</option>
+<option value="seven">7 digit</option>
+<option value="eight">8 digit</option>
+<option value="nine">9 digit</option>
+<option value="ten">10 digit</option>
+</select><br><br>
+<input type="button" id="btn1" value="Find Number" onclick="find();"/><br><br><br>
+<label id="result"></label>
+</div>
+</body>
+</html>

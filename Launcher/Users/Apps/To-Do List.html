@@ -1,0 +1,96 @@
+<html>
+    <head>
+        <title>Simple To-Do list</title>
+    </head>
+    <body>
+        <style type="text/css">
+        html, body{
+            padding: 0px;
+            margin: 0 auto;
+            width: 50%;
+            font-family: arial, Helvetica, sans-serif;
+        }
+
+        .container{
+            width: 360px;
+			user-select: none;
+        }
+
+        #inputField{
+            width: 300px;
+            height: 46px;
+            border: 1px solid black;
+            outline: none;
+            font-size: 25px;
+            vertical-align: middle;
+			user-select: none;
+        }
+
+        #addToDo{
+            height: 50px;
+            width: 50px;
+            border: 1px solid black;
+            vertical-align: middle;
+            font-size: 30px;
+			user-select: none;
+        }
+
+        .to-dos{
+            margin-top: 25px;
+        }
+
+        .paragraph-styling{
+            margin: 0px;
+            cursor: pointer;
+            font-size: 20px;
+			user-select: none;
+        }
+        </style>
+        <div class="container">
+            <h1>To Do list</h1>
+            <input type="text" placeholder="Add Items" id="inputField"/><button id="addToDo">+</button>
+            <div class="to-dos" id="toDoContainer">
+				<!--Here the all work appear-->
+            </div>
+        </div>
+        <script type="text/javascript">
+        let addToDoButton = document.getElementById("addToDo");
+        let toDoContainer = document.getElementById("toDoContainer");
+        let inputField = document.getElementById("inputField");
+
+        inputField.addEventListener("keypress", function(e){
+            if(e.key === "Enter"){
+            var paragraph = document.createElement("p");
+            paragraph.classList.add("paragraph-styling");
+            paragraph.innerText = inputField.value;
+            toDoContainer.appendChild(paragraph);
+            inputField.value = "";
+
+            paragraph.addEventListener("click", function(){
+                paragraph.style.textDecoration = "line-through";
+            });
+
+            paragraph.addEventListener("dblclick", function(){
+                toDoContainer.removeChild(paragraph);
+            });
+            }
+        })
+
+        addToDoButton.addEventListener("click", function(){
+            var paragraph = document.createElement("p");
+            paragraph.classList.add("paragraph-styling");
+            paragraph.innerText = inputField.value;
+            toDoContainer.appendChild(paragraph);
+            inputField.value = "";
+
+            paragraph.addEventListener("click", function(){
+                paragraph.style.textDecoration = "line-through";
+            });
+
+            paragraph.addEventListener("dblclick", function(){
+                toDoContainer.removeChild(paragraph);
+            });
+        })
+        </script>
+    </body>
+</html>

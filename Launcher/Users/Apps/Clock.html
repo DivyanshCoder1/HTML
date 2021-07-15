@@ -1,0 +1,55 @@
+<!doctypeHTML>
+<html>
+<head>
+<title>My Clock</title>
+</head>
+<body>
+	<input type="button" value="Time" onclick="displayclock()">
+	<p> Click the button above to see the time with seconds</p><br>
+<div id="CLOCK"></div>
+<style = "text/css">
+#CLOCK
+{
+ text-align: center;
+ margin: 150px;
+ width: 900px;
+ font-size: 150px;
+}
+	</style>
+<script type="text/javascript">
+		function displayclock(){
+		setInterval(displayclock, 500);
+		var time = new Date();
+		var hrs = time.getHours();
+		var min = time.getMinutes();
+		var sec = time.getSeconds();
+		var meridian = "AM";
+		if(hrs > 12){
+			hrs = hrs - 12;
+		}
+
+		if(hrs == 0){
+			hrs = 12;
+		}
+
+		if(hrs > 12){
+			meridian = "PM";
+		}
+
+		if(hrs < 10){
+			hrs = "0" + hrs;
+		}
+
+		if(min < 10){
+			min = "0" + min;
+		}
+
+		if(sec < 10){
+			sec = "0" + sec;
+		}
+		document.getElementById("CLOCK").innerHTML = (hrs + ":" + min + ":" + sec + " " + meridian);
+	}
+</script>
+	
+</body>
+</html>

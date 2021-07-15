@@ -1,0 +1,168 @@
+<html>
+    <head>
+        <title>
+            SignIn
+        </title>
+    </head>
+    <body>
+		<style type="text/css">
+        html{
+            background: linear-gradient(57deg, #00c6a7, #1e4d92);
+            color: white;
+        }
+
+        #text1{
+            border-color: black;
+            border-radius: 5px;
+            margin-left: 18px;
+        }
+
+        #text2{
+            border-color: black;
+            border-radius: 5px;
+        }
+
+        #text2:hover{
+            border-color: blue;
+            cursor: pointer;
+        }
+
+        #text1:hover{
+            border-color: blue;
+            cursor: pointer;
+            box-shadow: 5px;
+        }
+
+        #label1{
+            font-weight: bold;
+            font-size: 20px;
+            font-family: sans-serif;
+            margin-left: 85px;
+            margin-top: 35px;
+        }
+
+        #label2{
+            font-weight: bold;
+            font-size: 20px;
+            font-family: sans-serif;
+            margin-left: 63px;
+            margin-top: 75px;
+        }
+
+        #label5{
+            margin-left: 170px;
+            font-size: 25px;
+            font-weight: bold;
+            font-family: sans-serif;
+        }
+
+        #allthing{
+            background: linear-gradient(57deg,  #1e4d92, #00c6a7);
+            border-radius: 20px;
+            size: 50px;
+            align-content: center;
+            align-self: center;
+            align-items: center;
+            width: 30%;
+            margin-left: 500px;
+            margin-top: 200px;
+            border-color: black;
+        }
+
+        #btn2{
+            margin-left: 150px;
+            border-radius: 10px;
+            border-color: black;
+            color: black;
+            font-weight: bold;
+            background-color: white;
+        }
+
+        #btn2:hover{
+            background-color:darkcyan;
+            color: white;
+            margin-left: 150px;
+            border-radius: 10px;
+            border-color: black;
+            font-weight: bold;
+        }
+
+        #btn1{
+            border-radius: 10px;
+            border-color: black;
+            color: black;
+            font-weight: bold;
+            background-color: white;
+        }
+
+        #btn1:hover{
+            border-radius: 10px;
+            border-color: black;
+            color: white;
+            font-weight: bold;
+            background-color: darkcyan;
+        }
+		</style>
+        <div id="allthing">
+        <label id="label5">SignIn</label><br>
+        <label id="label1">Name:</label><input type="text" placeholder="Name" id="text1"/><br>
+        <label id="label2">Password:</label><input type="password" placeholder="Password" id="text2"/><br>
+        <button id="btn2" onclick="check();">Sign In</button>&nbsp;&nbsp;<button id="btn1" onclick="cleartext();">Clear</button><br><br>
+        <label id="label3"></label>
+        </div>
+        
+
+
+
+        <script type="text/javascript">
+        //JAVASCRIPT
+        function check(){
+        var text1 = document.getElementById("text1").value;
+        var text2 = document.getElementById("text2").value;
+
+        if((text1 == "username") && (text2 == "password")){
+            document.getElementById("label3").innerHTML = "Successfully Signed In!";
+			text1.value = "";
+			text2.value = "";
+            window.open("Users/user1.html");
+        }
+
+        if((text1 == "username1") && (text2 == "password1")){
+            document.getElementById("label3").innerHTML = "Successfully Signed In!";
+			text1.value = "";
+			text2.value = "";
+            window.open("Users/user2.html");
+        }
+
+        if((text1 == "username2") && (text2 == "password2")){
+            document.getElementById("label3").innerHTML = "Successfully Signed In!";
+			text1.value = "";
+			text2.value = "";
+            window.open("Users/user3.html");
+        }
+
+        if((text1 == "username3") && (text2 == "password3")){
+            document.getElementById("label3").innerHTML = "Successfully Signed In!";
+			text1.value = "";
+			text2.value = "";
+            window.open("Users/user4.html");
+        }
+		
+		if((text1 == "username4") && (text2 == "password4")){
+            document.getElementById("label3").innerHTML = "Successfully Signed In!";
+			text1.value = "";
+			text2.value = "";
+            window.open("Users/user5.html");
+        }
+
+        }
+		
+		function cleartext(){
+		text1.value = "";
+		text2.value = "";
+		document.getElementById("label3").innerHTML = "";
+		}
+        </script>
+
+    </body>
+</html>

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Time-Table</title>
+    </head>
+    <body>
+        <style type="text/css">
+        .para-test{
+            cursor: pointer;
+            font-weight: bold;
+            font-family: sans-serif;
+            user-select: none;
+        }
+
+        body{
+            margin: 0px;
+            padding: 0px;
+            background: green;
+            background: linear-gradient(57deg, #1e4d92, #00c6a7);
+            color: white;
+        }
+
+        .div1{
+            margin-top: 25px;
+            text-align: center;
+            border-color: black;
+            background: greenyellow;
+            width: 10%;
+            padding: 10px;
+            border-radius: 10px;
+            margin-left: 600px;
+            background: linear-gradient(57deg, #00c6a7 ,#1e4d92);
+            color: white;
+        }
+
+        h1{
+            color: white;
+            margin-left: 600px;
+            user-select: none;
+            margin-top: 0px;
+        }
+
+        #time{
+            font-size: 30px;
+            text-align: right;
+            user-select: none;
+        }
+
+        #label{
+            font-size: 30px;
+            text-align: right;
+            align-items: right;
+            user-select: none;
+        }
+
+        #date{
+            font-size: 30px;
+            user-select: none;
+        }
+
+        #day{
+            font-size: 30px;
+            user-select: none;
+        }
+
+        #label2{
+            user-select: none;
+            font-size: 30px;
+        }
+
+        #label3{
+            user-select: none;
+            font-size: 30px;
+            width: 10%;
+        }
+
+        #thewholetime{
+            width: 20%;
+            align-items: center;
+            text-align: left;
+            margin-left: 1050px;
+        }
+
+        #work{
+            user-select: none;
+            font-size: 30px;
+        }
+        </style>
+        <div id="thewholetime" width="20%">
+        <label id="label">Time:- </label><label id="time"></label><br>
+        <label id="label2">Date:- </label><label id="date"></label><br>
+        <label id="label3">Day:- </label><label id="day"></label><br>
+        </div>
+        <h1>Time Table</h1>
+        <div class="div1">
+        <p id="para">Brushing</p>
+        <hr>
+        <p id="para1">Breakfast</p>
+        <hr>
+        <p id="para2">Online Classes</p>
+        <hr>
+        <p id="para3">Lunch</p>
+        <hr>
+        <p id="para4">Homework</p>
+        <hr>
+        <p id="para5">Playing</p>
+        <hr>
+        <p id="para6">TV/Coding</p>
+        <hr>
+        <p id="para7">Dinner</p>
+        <hr>
+        <p id="para8">Sleeping</p>
+        </div>
+        <br><br>
+        <label id="label1">Made By:- </label><a href="divyansh.html">Divyansh P.</a>
+        <script type="text/javascript">
+        //JAVASCRIPT
+        let paragraph = document.getElementById("para");
+        let paragraph1 = document.getElementById("para1");
+        let paragraph2 = document.getElementById("para2");
+        let paragraph3 = document.getElementById("para3");
+        let paragraph4 = document.getElementById("para4");
+        let paragraph5 = document.getElementById("para5");
+        let paragraph6 = document.getElementById("para6");
+        let paragraph7 = document.getElementById("para7");
+        let paragraph8 = document.getElementById("para8");
+
+        paragraph.classList.add("para-test");
+        paragraph1.classList.add("para-test");
+        paragraph2.classList.add("para-test");
+        paragraph3.classList.add("para-test");
+        paragraph4.classList.add("para-test");
+        paragraph5.classList.add("para-test");
+        paragraph6.classList.add("para-test");
+        paragraph7.classList.add("para-test");
+        paragraph8.classList.add("para-test");
+        paragraph.addEventListener("click", function(){
+            paragraph.style.textDecoration = "line-through";
+        })
+
+        paragraph1.addEventListener("click", function(){
+            paragraph1.style.textDecoration = "line-through";
+            
+        })
+        paragraph2.addEventListener("click", function(){
+            paragraph2.style.textDecoration = "line-through";
+            
+        })
+        paragraph3.addEventListener("click", function(){
+            paragraph3.style.textDecoration = "line-through";
+            
+        })
+        paragraph4.addEventListener("click", function(){
+            paragraph4.style.textDecoration = "line-through";
+            
+        })
+        paragraph5.addEventListener("click", function(){
+            paragraph5.style.textDecoration = "line-through";
+            
+        })
+        paragraph6.addEventListener("click", function(){
+            paragraph6.style.textDecoration = "line-through";
+            
+        })
+        paragraph7.addEventListener("click", function(){
+            paragraph7.style.textDecoration = "line-through";
+            
+        })
+        paragraph8.addEventListener("click", function(){
+            paragraph8.style.textDecoration = "line-through";
+            
+        })
+        time();
+        
+        function time(){
+            setInterval("time()", 500);
+            var time = new Date();
+            var hour = time.getHours();
+            var min = time.getMinutes();
+            var sec = time.getSeconds();
+            var date = time.getUTCDate();
+            var month = time.getUTCMonth();
+            var year  = time.getUTCFullYear();
+            var day = time.getUTCDay();
+            var timezone = "AM";
+            if(hour > 12){
+                hour = hour - 12;
+            }
+
+            if(sec < 10){
+                sec = "0" + sec;
+            }
+
+            if(min < 10){
+                min = "0" + min;
+            }
+
+            if(hour < 10){
+                hour = "0" + hour;
+            }
+
+            if(day == 0){
+                day = "Sunday"
+            }
+
+            if(day == 1){
+                day =  "Monday"
+            }
+
+            if(day == 2){
+                day =  "Tuesday"
+            }
+
+            if(day == 3){
+                day =  "Wednesday"
+            }
+
+            if(day == 4){
+                day =  "Thrusday"
+            }
+
+            if(day == 5){
+                day =  "Friday"
+            }
+
+            if(day == 6){
+                day =  "Saturday"
+            }
+
+            if(hour >= 12){
+                timezone = "PM"
+            }
+
+            if(hour == 0){
+                hour = 12;
+            }
+            document.getElementById("time").innerHTML = hour + ":" + min + ":" + sec + " " + timezone;
+            document.getElementById("date").innerHTML = date + "/" + month + "/" + year;
+            document.getElementById("day").innerHTML = day;
+        }
+        </script>
+    </body>
+</html>
