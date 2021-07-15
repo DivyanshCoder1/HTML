@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <title>GB to MB(Vice Versa)</title>
+    </head>
+    <body>
+        From: <input type="text" id="unit_value" placeholder="UNIT" onMouseover="setit();"/>
+        <select id="oper">
+            <option value="GB">GB</option>
+            <option value="MB">MB</option>
+        </select>
+        To: <select id="oper2">
+            <option value="MB">MB</option>
+            <option value="GB">GB</option>
+        </select><br>
+        <label id="result"></label>
+        <script type="text/javascript">
+            function setit(){
+                setInterval("starter();", 0);
+            }
+
+            function starter(){
+                var num = parseInt(document.getElementById("unit_value").value);
+                var oper = document.getElementById("oper").value;
+                var oper2 = document.getElementById("oper2").value;
+
+                if(oper=="GB"){
+                    if(oper2=="GB"){
+                        document.getElementById("result").innerHTML = num * 1;
+                    }
+
+                    if(oper2=="MB"){
+                        document.getElementById("result").innerHTML = num*1024;
+                    }
+                }
+
+                if(oper=="MB"){
+                    if(oper2=="GB"){
+                        document.getElementById("result").innerHTML = num/1024;
+                    }
+
+                    if(oper2=="MB"){
+                        document.getElementById("result").innerHTML = num * 1;
+                    }
+                }
+            }
+        </script>
+   </body>
+</html>
