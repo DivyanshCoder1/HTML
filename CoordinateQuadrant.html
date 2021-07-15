@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoordinateQuadrant</title>
+</head>
+<body>
+    <input type="text" placeholder="X Coordinate" id="xco"/>
+    <br>
+    <input type="text" placeholder="Y Coordinate" id="yco"/><br><br>
+    <input type="button" value="Check Quadrant" id="btn1" onclick="check();"/><br>
+    <br>
+    <br>
+    <label id="result"></label>
+    <script type="text/javascript">
+        //Javascript
+        function check(){
+            var xcoval = Math.floor(parseInt(document.getElementById("xco").value));
+            var ycoval = Math.floor(parseInt(document.getElementById("yco").value));
+
+            if(xcoval >= 0 && ycoval >= 0){
+                if(xcoval == 0 && ycoval == 0){
+                    document.getElementById("result").inenrHTML = "Origin";
+                }
+                if(xcoval > 0 && ycoval > 0){
+                    document.getElementById("result").innerHTML = "First Quadrant";
+                }
+            }
+
+            if(xcoval <= 0 && ycoval <= 0){
+                if(xcoval == 0 && ycoval == 0){
+                    document.getElementById("result").inenrHTML = "Origin";
+                }
+                if(xcoval < 0 && ycoval < 0){
+                    document.getElementById("result").innerHTML = "Third Quadrant";
+                }
+            }
+
+            if(xcoval < 0 && ycoval > 0){
+                    document.getElementById("result").innerHTML = "Second Quadrant";
+            }
+            
+            if(xcoval > 0 && ycoval < 0){
+                    document.getElementById("result").innerHTML = "Fourth Quadrant";
+            }
+
+
+            if(xcoval == 0){
+                if(ycoval == 0){
+                    document.getElementById("result").innerHTML = "Origin"; 
+                }
+                if(ycoval > 0 || ycoval < 0){
+                    document.getElementById("result").innerHTML = "Y-axis";
+                }
+            }
+
+            if(ycoval == 0){
+                if(xcoval == 0){
+                    document.getElementById("result").innerHTML = "Origin";
+                }
+                if(xcoval > 0 || xcoval < 0){
+                    document.getElementById("result").innerHTML = "X-axis";
+                }
+            }
+        }
+    </script>
+</body>
+</html>
