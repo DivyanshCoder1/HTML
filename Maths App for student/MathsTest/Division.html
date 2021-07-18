@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Division</title>
+</head>
+<body>
+    <a href="Division2.html">Get Complicated Questions(With Decimal)</a><br>
+    <div id="container">
+        <input type="button" id="btn5" value="Reload" onclick="reloadsite();" onmouseover="document.getElementById('reloadit').innerHTML = 'Click this button to reload the site';" onmouseout="document.getElementById('reloadit').innerHTML = '';"/><br><br>
+        <select id="opervalue">
+            <option selected value="select">Select</option>
+            <option value="1digi">1 Digit</option>
+            <option value="2digi">2 Digit</option>
+            <option value="3digi">3 Digit</option>
+            <option value="4digi">4 Digit</option>
+            <!-- 
+            <option value="5digi">5 Digit</option>
+            <option value="6digi">6 Digit</option>
+            -->
+        </select>
+        <br>
+        <input type="button" value="Start" onclick="runit();" id="btn1"/>
+        <br>
+        <label id="onenum"></label>  <label id="sign"></label>  <label id="twonum"></label> <label id="signtwo"></label>
+    </div>
+
+    <br><br>
+
+    <label id="reloadit"></label>
+
+    <script type="text/javascript">
+        //Javascript
+        function reloadsite(){
+            location.reload();
+            console.log("Reloaded Once!!!");
+        }
+        function runit(){
+            var startbtn = document.getElementById("btn1");
+            var opervalue = document.getElementById("opervalue");
+            var onenum = document.getElementById("onenum");
+            var twonum = document.getElementById("twonum");
+            var sign = document.getElementById("sign");
+
+            if(opervalue.value == "1digi"){
+                opervalue.disabled = true;
+                startbtn.disabled = true;
+                var answerbox = document.createElement("input");
+                var subbtn = document.createElement("button");
+
+                var oneno = parseInt(Math.floor(Math.random() * 10));
+                var twono = parseInt(Math.floor(Math.random() * 10));
+                var signto = "/";
+
+
+                var contdiv = document.getElementById("container");
+
+                answerbox.type = "number";
+                answerbox.placeholder = "Answer";
+                answerbox.id = "ans";
+
+                subbtn.innerText = "Submit";
+                subbtn.id = "submitit";
+
+                if(oneno == 0 || twono == 0 || oneno < twono || oneno % twono != 0 || oneno/twono == 1 || twono > 20){
+                    runit();
+                }else{
+                    document.getElementById("onenum").innerHTML = oneno;
+                    document.getElementById("twonum").innerHTML = twono;
+                    document.getElementById("sign").innerHTML = " / ";
+                    document.getElementById("signtwo").innerHTML = " = ";
+
+                    contdiv.appendChild(answerbox);
+                    contdiv.appendChild(subbtn);
+
+                    var submitbutton = document.getElementById("submitit");
+
+                    submitbutton.addEventListener("click", function(){
+                        var ansbox = parseInt(document.getElementById("ans").value);
+                        var theans = oneno / twono;
+
+                        if(ansbox == theans){
+                            console.log("Correct!!");
+                            contdiv.removeChild(answerbox);
+                            contdiv.removeChild(subbtn);
+                            runit();
+                        }else{
+                            console.log("Wrong!!!");
+                            contdiv.removeChild(answerbox);
+                            contdiv.removeChild(subbtn);
+                            runit();
+                        }
+                    });
+                }
+            }
+            if(opervalue.value == "2digi"){
+                opervalue.disabled = true;
+                startbtn.disabled = true;
+                var answerbox = document.createElement("input");
+                var subbtn = document.createElement("button");
+
+                var oneno = parseInt(Math.floor(Math.random() * 100));
+                var twono = parseInt(Math.floor(Math.random() * 100));
+                var signto = "+";
+
+
+                var contdiv = document.getElementById("container");
+
+                answerbox.type = "number";
+                answerbox.placeholder = "Answer";
+                answerbox.id = "ans";
+
+                subbtn.innerText = "Submit";
+                subbtn.id = "submitit";
+
+                if(oneno == 0 || twono == 0 || oneno < twono || oneno % twono != 0 || oneno/twono == 1 || twono > 20){
+                    runit();
+                }else{
+                    document.getElementById("onenum").innerHTML = oneno;
+                    document.getElementById("twonum").innerHTML = twono;
+                    document.getElementById("sign").innerHTML = " / ";
+                    document.getElementById("signtwo").innerHTML = " = ";
+
+                    contdiv.appendChild(answerbox);
+                    contdiv.appendChild(subbtn);
+
+                    var submitbutton = document.getElementById("submitit");
+
+                    submitbutton.addEventListener("click", function(){
+                        var ansbox = parseInt(document.getElementById("ans").value);
+                        var theans = oneno / twono;
+
+                        if(ansbox == theans){
+                            console.log("Correct!!");
+                            contdiv.removeChild(answerbox);
+                            contdiv.removeChild(subbtn);
+                            runit();
+                        }else{
+                            console.log("Wrong!!!");
+                            contdiv.removeChild(answerbox);
+                            contdiv.removeChild(subbtn);
+                            runit();
+                        }
+                    });
+                }
+            }
+            if(opervalue.value == "3digi"){
+                opervalue.disabled = true;
+                startbtn.disabled = true;
+                var answerbox = document.createElement("input");
+                var subbtn = document.createElement("button");
+
+                var oneno = parseInt(Math.floor(Math.random() * 1000));
+                var twono = parseInt(Math.floor(Math.random() * 1000));
+                var signto = "+";
+
+
+                var contdiv = document.getElementById("container");
+
+                answerbox.type = "number";
+                answerbox.placeholder = "Answer";
+                answerbox.id = "ans";
+
+                subbtn.innerText = "Submit";
+                subbtn.id = "submitit";
+
+                if(oneno == 0 || twono == 0 || oneno < twono || oneno % twono != 0 || oneno/twono == 1 || twono > 20){
+                    runit();
+                }else{
+                    document.getElementById("onenum").innerHTML = oneno;
+                    document.getElementById("twonum").innerHTML = twono;
+                    document.getElementById("sign").innerHTML = " / ";
+                    document.getElementById("signtwo").innerHTML = " = ";
+
+                    contdiv.appendChild(answerbox);
+                    contdiv.appendChild(subbtn);
+
+                    var submitbutton = document.getElementById("submitit");
+
+                    submitbutton.addEventListener("click", function(){
+                        var ansbox = parseInt(document.getElementById("ans").value);
+                        var theans = oneno / twono;
+
+                        if(ansbox == theans){
+                            console.log("Correct!!");
+                            contdiv.removeChild(answerbox);
+                            contdiv.removeChild(subbtn);
+                            runit();
+                        }else{
+                            console.log("Wrong!!!");
+                            contdiv.removeChild(answerbox);
+                            contdiv.removeChild(subbtn);
+                            runit();
+                        }
+                    });
+                }
+            }
+            if(opervalue.value == "4digi"){
+                opervalue.disabled = true;
+                startbtn.disabled = true;
+                var answerbox = document.createElement("input");
+                var subbtn = document.createElement("button");
+
+                var oneno = parseInt(Math.floor(Math.random() * 10000));
+                var twono = parseInt(Math.floor(Math.random() * 10000));
+                var signto = "+";
+
+
+                var contdiv = document.getElementById("container");
+
+                answerbox.type = "number";
+                answerbox.placeholder = "Answer";
+                answerbox.id = "ans";
+
+                subbtn.innerText = "Submit";
+                subbtn.id = "submitit";
+
+                if(oneno == 0 || twono == 0 || oneno < twono || oneno % twono != 0 || oneno/twono == 1 || twono > 20){
+                    runit();
+                }else{
+                    document.getElementById("onenum").innerHTML = oneno;
+                    document.getElementById("twonum").innerHTML = twono;
+                    document.getElementById("sign").innerHTML = " / ";
+                    document.getElementById("signtwo").innerHTML = " = ";
+
+                    contdiv.appendChild(answerbox);
+                    contdiv.appendChild(subbtn);
+
+                    var submitbutton = document.getElementById("submitit");
+
+                    submitbutton.addEventListener("click", function(){
+                        var ansbox = parseInt(document.getElementById("ans").value);
+                        var theans = oneno / twono;
+
+                        if(ansbox == theans){
+                            console.log("Correct!!");
+                            contdiv.removeChild(answerbox);
+                            contdiv.removeChild(subbtn);
+                            runit();
+                        }else{
+                            console.log("Wrong!!!");
+                            contdiv.removeChild(answerbox);
+                            contdiv.removeChild(subbtn);
+                            runit();
+                        }
+                    });
+                }
+            }
+            if(opervalue.value == "5digi"){
+                opervalue.disabled = true;
+                startbtn.disabled = true;
+                var answerbox = document.createElement("input");
+                var subbtn = document.createElement("button");
+
+                var oneno = parseInt(Math.floor(Math.random() * 100000));
+                var twono = parseInt(Math.floor(Math.random() * 100000));
+                var signto = "+";
+
+
+                var contdiv = document.getElementById("container");
+
+                answerbox.type = "number";
+                answerbox.placeholder = "Answer";
+                answerbox.id = "ans";
+
+                subbtn.innerText = "Submit";
+                subbtn.id = "submitit";
+
+                if(oneno == 0 || twono == 0 || oneno < twono || oneno % twono != 0 || oneno/twono == 1 || twono > 20){
+                    runit();
+                }else{
+                    document.getElementById("onenum").innerHTML = oneno;
+                    document.getElementById("twonum").innerHTML = twono;
+                    document.getElementById("sign").innerHTML = " / ";
+                    document.getElementById("signtwo").innerHTML = " = ";
+
+                    contdiv.appendChild(answerbox);
+                    contdiv.appendChild(subbtn);
+
+                    var submitbutton = document.getElementById("submitit");
+
+                    submitbutton.addEventListener("click", function(){
+                        var ansbox = parseInt(document.getElementById("ans").value);
+                        var theans = oneno / twono;
+
+                        if(ansbox == theans){
+                            console.log("Correct!!");
+                            contdiv.removeChild(answerbox);
+                            contdiv.removeChild(subbtn);
+                            runit();
+                        }else{
+                            console.log("Wrong!!!");
+                            contdiv.removeChild(answerbox);
+                            contdiv.removeChild(subbtn);
+                            runit();
+                        }
+                    });
+                }
+            }
+            if(opervalue.value == "6digi"){
+                opervalue.disabled = true;
+                startbtn.disabled = true;
+                var answerbox = document.createElement("input");
+                var subbtn = document.createElement("button");
+
+                var oneno = parseInt(Math.floor(Math.random() * 1000000));
+                var twono = parseInt(Math.floor(Math.random() * 1000000));
+                var signto = "+";
+
+
+                var contdiv = document.getElementById("container");
+
+                answerbox.type = "number";
+                answerbox.placeholder = "Answer";
+                answerbox.id = "ans";
+
+                subbtn.innerText = "Submit";
+                subbtn.id = "submitit";
+
+                if(oneno == 0 || twono == 0 || oneno < twono || oneno % twono != 0 || oneno/twono == 1 || twono > 20){
+                    runit();
+                }else{
+                    document.getElementById("onenum").innerHTML = oneno;
+                    document.getElementById("twonum").innerHTML = twono;
+                    document.getElementById("sign").innerHTML = " / ";
+                    document.getElementById("signtwo").innerHTML = " = ";
+
+                    contdiv.appendChild(answerbox);
+                    contdiv.appendChild(subbtn);
+
+                    var submitbutton = document.getElementById("submitit");
+
+                    submitbutton.addEventListener("click", function(){
+                        var ansbox = parseInt(document.getElementById("ans").value);
+                        var theans = oneno / twono;
+
+                        if(ansbox == theans){
+                            console.log("Correct!!");
+                            contdiv.removeChild(answerbox);
+                            contdiv.removeChild(subbtn);
+                            runit();
+                        }else{
+                            console.log("Wrong!!!");
+                            contdiv.removeChild(answerbox);
+                            contdiv.removeChild(subbtn);
+                            runit();
+                        }
+                    });
+                }
+            }
+            }
+    </script>
+
+</body>
+</html>

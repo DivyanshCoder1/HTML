@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Subject</title>
+</head>
+<body>
+    <input type="button" id="btn5" value="Reload" onclick="reloadsite();" onmouseover="document.getElementById('reloadit').innerHTML = 'Click this button to reload the site';" onmouseout="document.getElementById('reloadit').innerHTML = '';"/><br><br>
+    <select id="mathsoper">
+        <option selected value="sele">Select Operations</option>
+        <option value="add">Addition</option>
+        <option value="sub">Subtraction</option>
+        <option value="multi">Multiplication</option>
+        <option value="divi">Division</option>
+    </select>
+    <input type="button" onclick="startit();" value="Start" id="btn1"/>
+    <br><br>
+    <label id="reloadit"></label>
+    <script type="text/javascript">
+        //Javascript
+
+        function reloadsite(){
+            location.reload();
+        }
+        function startit(){
+            var selectpanel = document.getElementById("mathsoper");
+            var btn = document.getElementById("btn1");
+
+            if(selectpanel.value == "sele"){
+                document.getElementById("reloadit").innerHTML = "Select an Operation!!!";
+            }
+
+            if(selectpanel.value == "add"){
+                window.open("Addition.html");
+                btn.disabled = true;
+                selectpanel.disabled = true;
+            
+            }
+
+            if(selectpanel.value == "sub"){
+                window.open("Subtraction.html");
+                btn.disabled = true;
+                selectpanel.disabled = true;
+            }
+
+            if(selectpanel.value == "multi"){
+                window.open("Multiplication.html");
+                btn.disabled = true;
+                selectpanel.disabled = true;
+
+            }
+
+            if(selectpanel.value == "divi"){
+                window.open("Division.html");
+                btn.disabled = true;
+                selectpanel.disabled = true;
+            }
+            }
+    </script>
+</body>
+</html>
