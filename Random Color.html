@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Color</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&display=swap" rel="stylesheet">
+    <style type="text/css">
+        body {
+            background-image: url('https://source.unsplash.com/1600x900/?nature,code,color') !important;
+        }
+
+        .colorred {
+            background-color: red;
+            color: white;
+        }
+        .coloryellow {
+            background-color: yellow;
+            color: black;
+        }
+        .colorblue {
+            background-color: blue;
+            color: white;
+        }
+        .colorgreen {
+            background-color: green;
+            color: white;
+        }
+        .colorgrey {
+            background-color: grey;
+            color: white;
+        }
+        .colorpurple {
+            background-color: purple;
+            color: white;
+        }
+
+        #result {
+            border-radius: 100%;
+            width: 100px;
+            text-align: center;
+            font-weight: bold;
+            font-style: italic;
+            height: 100px;
+            margin: auto;
+            user-select: none;
+            font-size: 25px;
+            overflow: none;
+        }
+
+        #result label {
+            line-height: 100px;
+        }
+
+        #colornamecode {
+            text-align: center;
+            line-height: 50px;
+            font-size: 35px;
+        }
+
+        #btn1 {
+            display: block;
+            margin: auto;
+            font-size: 20px;
+            border: 2px solid black;
+            background-color: white;
+            padding: 15px;
+            line-height: 15px;
+            user-select: none;
+            font-family: 'Ubuntu Condensed', sans-serif;
+            font-weight: bold;
+        }
+
+        #btn1:hover {
+            background-color: rgb(118, 226, 245);
+            cursor: pointer;
+        }
+
+        .containerbeauty {
+            border: 3px solid black;
+            width: 300px;
+            margin: auto;
+            padding: 15px;
+            border-radius: 15px;
+            background-color: white;
+            margin-top: 100px;
+        }
+
+        .colorforbtn{
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <input title="Generate Color" type="button" id="btn1" value="Generate Random Color"
+        onclick="generaterandom();document.getElementById('btn1').classList.add('colorforbtn');"><br><br>
+    <div id="container">
+        <div id="result" class=""></div>
+        <div id="colornamecode"></div>
+    </div>
+    <script type="text/javascript">
+        //Javascript
+        /*
+            Hello Guys,
+            I am Divyansh,
+            I am posting this random color app on github repository.
+            I have added six colors to it.You can addmore if you have knowledge about it.
+            Second thing is that you also need an active internet connection to load the images else you can generate colors without it also.
+            Please also check my youtube channel.
+            If you want anychange in this or want me to add more colors than you can comment me.
+            Link :- https://www.youtube.com/channel/UC1HtVUuCJKshmcEbINLLKLg
+            Please visit it !!! 🙏🙏🙏
+        */
+        function generaterandom() {
+            document.getElementById("result").classList = "";
+            var colordiv = document.getElementById("result");
+            var num = Math.floor(Math.random() * 10);
+            if (num > 5) {
+                generaterandom();
+            } else {
+                if (num == 0) {
+                    console.log("Red");
+                    document.getElementById("result").innerHTML = "<label>Red</label>";
+                    document.getElementById("result").classList.add('colorred');
+                    document.getElementById("colornamecode").innerHTML = "<label>#FF0000</label>";
+                    document.getElementById("colornamecode").style.color = "red";
+                    document.getElementById("container").classList.add('containerbeauty');
+                }
+                else if (num == 1) {
+                    console.log("Yellow");
+                    document.getElementById("result").innerHTML = "<label>Yellow</label>";
+                    document.getElementById("result").classList.add('coloryellow');
+                    document.getElementById("colornamecode").innerHTML = "<label>#FFFF00</label>";
+                    document.getElementById("colornamecode").style.color = "yellow";
+                    document.getElementById("container").classList.add('containerbeauty');
+                }
+                else if (num == 2) {
+                    console.log("Green");
+                    document.getElementById("result").innerHTML = "<label>Green</label>";
+                    document.getElementById("result").classList.add('colorgreen');
+                    document.getElementById("colornamecode").innerHTML = "<label>#00FF00</label>";
+                    document.getElementById("colornamecode").style.color = "green";
+                    document.getElementById("container").classList.add('containerbeauty');
+                }
+                else if (num == 3) {
+                    console.log("Blue");
+                    document.getElementById("result").innerHTML = "<label>Blue</label>";
+                    document.getElementById("result").classList.add('colorblue');
+                    document.getElementById("colornamecode").innerHTML = "<label>#0000FF</label>";
+                    document.getElementById("colornamecode").style.color = "blue";
+                    document.getElementById("container").classList.add('containerbeauty');
+                }
+                else if (num == 4) {
+                    console.log("Purple");
+                    document.getElementById("result").innerHTML = "<label>Purple</label>";
+                    document.getElementById("result").classList.add('colorpurple');
+                    document.getElementById("colornamecode").innerHTML = "<label>#800080</label>";
+                    document.getElementById("colornamecode").style.color = "purple";
+                    document.getElementById("container").classList.add('containerbeauty');
+                }
+                else if (num == 5) {
+                    console.log("Grey");
+                    document.getElementById("result").innerHTML = "<label>Grey</label>";
+                    document.getElementById("result").classList.add('colorgrey');
+                    document.getElementById("colornamecode").innerHTML = "<label>#808080</label>";
+                    document.getElementById("colornamecode").style.color = "grey";
+                    document.getElementById("container").classList.add('containerbeauty');
+                }
+            }
+            document.getElementById('btn1').classList.remove('colorforbtn');
+        }
+    </script>
+</body>
+
+</html>
