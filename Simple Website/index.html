@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Independance Day:About India</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap" rel="stylesheet">
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+
+        #indiaimg {
+            display: block;
+            margin: 15px auto;
+            user-select: none;
+        }
+
+        #heading1 {
+            margin-left: 465px;
+            font-size: 55px;
+            user-select: none;
+            font-family: 'Roboto Mono', monospace;
+        }
+
+        #info {
+            font-weight: bold;
+            font-family: 'Roboto Mono', monospace;
+            text-align: justify;
+            margin: 2px 15px;
+        }
+
+        #navBar {
+            background-color: purple;
+            height: 45px;
+            user-select: none;
+            top: 0px;
+            width: 100%;
+            overflow: hidden;
+            vertical-align: bottom;
+            font-size: 22px;
+        }
+
+        .navli a {
+            text-decoration: none;
+            height: 40px;
+            padding: 25px 15px;
+            color: white;
+            font-size: 20px;
+            user-select: none;
+        }
+
+        .navli {
+            list-style: none;
+            display: inline;
+            padding: 40px 0px;
+        }
+
+        .navli:hover {
+            background-color: rgb(150, 78, 150);
+            text-decoration: underline;
+        }
+
+        .navli a:visited {
+            color: grey;
+        }
+
+        #navul {
+            height: 40px;
+            display: inline;
+        }
+
+        #logoimg {
+            margin-left: 25px;
+            user-select: none;
+            cursor: pointer;
+            margin-top: 4px;
+        }
+
+        #logo {
+            display: inline;
+            width: 50px;
+            height: 40px;
+            vertical-align: middle;
+        }
+
+        #searchdiv{
+            display: inline;
+            margin-left: 575px;
+        }
+
+        #btn1{
+            background: white;
+            border: none;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            margin-left: 0px;
+            border-top-right-radius: 8px;
+            border-bottom-right-radius: 8px;
+            position: relative;
+            top: 2px;
+        }
+
+        #btn1:hover{
+            background-color: rgb(235, 235, 235);
+        }
+
+        #input1{
+            height: 30px;
+            font-size: 20px;
+            border-top-left-radius: 8px;
+            border-bottom-left-radius: 8px;
+            border: none;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <!--Please read the comment below!!!-->
+    <!--This is a HTML file with all the other languages inside it.The images are in folder and the css and jaavscript are inside this code only.-->
+    <nav id="navBar">
+        <div id="logo">
+            <img src="icon.png" id="logoimg" width="35px">
+        </div>
+        <ul id="navul">
+            <li class="navli"><a href="#">Home</a></li>
+            <li class="navli"><a href="services.html">Services</a></li>
+            <li class="navli"><a href="aboutus.html">About Us</a></li>
+            <li class="navli"><a href="contactus.html">Contact Us</a></li>
+        </ul>
+        <div id="searchdiv">
+            <input type="search" placeholder="Search..." id="input1"/><button onclick = "startsear();" id="btn1"><img src="search.png" width="20px"/></button>
+        </div>
+    </nav>
+    <img id="indiaimg" src="india.png" width="300px">
+    <h1 id="heading1">About India</h1>
+    <p id="info"><b>Location:-India, officially the Republic of India,
+            is a country in South Asia. It is the second-most populous country,
+            the seventh-largest country by land area, and the most populous democracy in the world.
+            Bounded by the Indian Ocean on the south, the Arabian Sea on the southwest, and the Bay of
+            Bengal on the southeast, it shares land borders with Pakistan to the west; China, Nepal,
+            and Bhutan to the north; and Bangladesh and Myanmar to the east. In the Indian Ocean, India
+            is in the vicinity of Sri Lanka and the Maldives; its Andaman and Nicobar Islands share a
+            maritime border with Thailand, Myanmar and Indonesia.You can add more content here.</b></p>
+
+            <script type="text/javascript">
+                function startsear(){
+                    var str = document.getElementById("info").innerText;
+                    var input = String(document.getElementById("input1").value);
+                    var serresu = str.search(input);
+                    if(serresu == -1){
+                        document.getElementById("input1").value = 'Nothing Found';
+                    }else{
+                        str[serresu].select();
+                    }
+                }
+            </script>
+</body>
+
+</html>
