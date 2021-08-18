@@ -1,0 +1,124 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    background-image: url('background.jpg');
+    background-repeat: no-repeat;
+}
+
+.timerlabel{
+    font-size: 175px;
+}
+
+#container{
+    display: block;
+    margin: auto;
+    text-align: center;
+    margin-top: 160px;
+    user-select: none;
+}
+
+#resetdiv{
+    display: inline;
+    user-select: none;
+}
+
+#pausediv{
+    display: inline;
+    user-select: none;
+}
+
+#btn1{
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    user-select: none;
+    text-align: center;
+}
+
+#btn2{
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    user-select: none;
+    text-align: center;
+}
+
+#btn3{
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    user-select: none;
+    text-align: center;
+}
+
+#all{
+    text-align: center;
+}
+
+#btn4{
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+#restartdiv{
+    display: inline;
+}
+
+.userselectlabel{
+    user-select:all;
+}
+
+#label1{
+    font-size: 20px;
+}
+
+.boxborderdiv{
+    border: 2px solid black;
+    border-radius: 15px;
+    display: inline-block;
+    width: 1000px;
+    margin: auto;
+    background: rgb(255, 255, 255, 50%);
+}
+
+#allcont{
+    user-select: none;
+    display: block;
+    margin: auto;
+    padding: 2px;
+    width: 200px;
+    margin-top: 5px;
+    border: 2px solid black;
+    border-radius: 15px;
+    background: rgb(255, 255, 255, 50%);
+}
+
+.l1{
+    color: black;
+    font-size: 15px;
+    display: block;
+    cursor: pointer;
+}
+
+#l2{
+    color: black;
+    font-size: 15px;
+    display: block;
+    cursor: pointer;
+}
+
+#a1{
+    position: absolute;
+    bottom: 2px;
+    left: 160px;
+    color: rgb(52, 52, 190);
+}
+
+#a2{
+    position: absolute;
+    bottom: 2px;
+    left: 10px;
+    color: rgb(52, 52, 190);
+}
